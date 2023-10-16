@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme._600ToeicVocabularyWords" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme._600ToeicVocabularyWords" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- set color for toolbar -->
+        <item name="colorPrimary">@color/toolbar_color</item>
+        <!-- <item name="actionBarSize">30dp</item> -->
     </style>
 
-    <style name="Theme._600ToeicVocabularyWords" parent="Base.Theme._600ToeicVocabularyWords" />
 </resources>

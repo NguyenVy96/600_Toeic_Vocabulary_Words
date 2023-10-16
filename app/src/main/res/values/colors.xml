@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="default_bg_color">#B9B7B7</color>
+    <color name="lesson_item_color">@color/white</color>
+    <color name="blue">#1B8BFB</color>
+    <color name="toolbar_color">@color/blue</color>
 </resources>
