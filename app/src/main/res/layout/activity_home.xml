@@ -1,55 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/default_bg_color"
     android:orientation="vertical"
     tools:context=".home.HomeActivity"
-    android:id="@+id/drawer_layout"
     tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/default_bg_color"
         android:orientation="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/toolbar_height"
+            android:elevation="@dimen/toolbar_elevation"
             android:background="@color/toolbar_color">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/toolbar_height">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text free"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </androidx.appcompat.widget.Toolbar>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Text free"
-                    android:textColor="@color/white"
-                    android:textSize="15sp" />
-
-            </androidx.appcompat.widget.Toolbar>
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <LinearLayout
-            android:id="@+id/fragment_layout"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_lesson"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:background="@color/default_bg_color"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/rcv_lesson_layout_padding_top" />
 
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        app:headerLayout="@layout/header_navi_drawer"
-        app:menu="@menu/menu_header_navi_drawer"
-        android:background="@color/default_bg_color"
-        android:layout_gravity="start"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/default_bg_color"
+        app:headerLayout="@layout/header_navi_drawer"
+        app:menu="@menu/menu_header_navi_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -51,4 +51,10 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // for expand / collapse toolbar animation
+    implementation("androidx.palette:palette:1.0.0")
+
+    // for circle image view
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }

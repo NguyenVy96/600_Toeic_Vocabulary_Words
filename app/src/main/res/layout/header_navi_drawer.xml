@@ -7,8 +7,8 @@
     android:orientation="vertical"
     android:paddingStart="30dp">
 
-    <ImageView
-        android:src="@drawable/ic_dictionary"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:src="@drawable/image_contract"
         android:id="@+id/header_navi_avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
