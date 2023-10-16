@@ -3,24 +3,33 @@ package com.vynguyen.a600toeicvocabularywords.home
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
 import com.vynguyen.a600toeicvocabularywords.R
+import com.vynguyen.a600toeicvocabularywords.databinding.ActivityHomeBinding
 
 
-class HomeActivity : AppCompatActivity() {
+@Suppress("DEPRECATION")
+class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private lateinit var viewBinding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+
+        viewBinding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(viewBinding.root)
 
         setToolbar()
         showHomeFragment()
+        setupNaviDrawer()
     }
 
     private fun setToolbar() {
-        val toolbar: Toolbar = findViewById(com.vynguyen.a600toeicvocabularywords.R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(viewBinding.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -36,5 +45,31 @@ class HomeActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_layout, HomeFragment())
         transaction.commit()
+    }
+
+    private fun setupNaviDrawer() {
+        val toggle: ActionBarDrawerToggle = ActionBarDrawerToggle(
+            this,
+            viewBinding.drawerLayout,
+            viewBinding.toolbar,
+            R.string.open_navi_drawer,
+            R.string.close_navi_drawer
+        )
+        viewBinding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // TODO: need implement function
+
+        return true
+    }
+
+    override fun onBackPressed() {
+        if (viewBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            viewBinding.drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 }

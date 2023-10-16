@@ -2,4 +2,5 @@
 <resources>
     <color name="default_bg_color">@color/black</color>
     <color name="lesson_item_color">#383838</color>
+    <color name="svg_icon_color">@color/white</color>
 </resources>

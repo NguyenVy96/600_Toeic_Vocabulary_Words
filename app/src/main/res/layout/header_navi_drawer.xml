@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:gravity="center_vertical"
+    android:background="@color/toolbar_color"
+    android:orientation="vertical"
+    android:paddingStart="30dp">
+
+    <ImageView
+        android:src="@drawable/ic_dictionary"
+        android:id="@+id/header_navi_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="5dp" />
+
+    <TextView
+        android:id="@+id/header_navi_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/header_text_color"
+        android:text="Classic Man" />
+
+    <TextView
+        android:id="@+id/header_navi_user_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/header_text_color"
+        android:text="100/100" />
+
+</LinearLayout>
